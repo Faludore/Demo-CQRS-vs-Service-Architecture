@@ -1,0 +1,7 @@
+﻿@model List<DemoCQRSvsSevrice.Models.User>
+
+<option value="0">Select user to update</option>
+@foreach (var item in Model)
+{
+    <option value="@item.Id">@item.Id | @item.FirstName | @item.LastName</option>
+}

@@ -1,0 +1,271 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Comparation";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Service architecture</h2>
+        <hr />
+        <ul id="tab-service" class="nav nav-tabs">
+            <li class="nav-item">
+                <a id="get-all-by-service-tab" class="nav-link active" href="#get-all-by-service" data-toggle="tab" aria-expanded="true">Gat all</a>
+            </li>
+            <li class="nav-item">
+                <a id="get-by-id-by-service-tab" class="nav-link" href="#get-by-id-by-service" data-toggle="tab" aria-expanded="false">Get by id</a>
+            </li>
+            <li class="nav-item">
+                <a id="create-by-service-tab" class="nav-link" href="#create-by-service" data-toggle="tab" aria-expanded="false">Create</a>
+            </li>
+            <li class="nav-item">
+                <a id="update-by-service-tab" class="nav-link" href="#update-by-service" data-toggle="tab" aria-expanded="false">Update</a>
+            </li>
+            <li class="nav-item">
+                <a id="delete-by-service-tab" class="nav-link" href="#delete-by-service" data-toggle="tab" aria-expanded="false">Delete</a>
+            </li>
+        </ul>
+        <div id="tab-service-content" class="tab-content">
+            <div id="get-all-by-service" class="tab-pane fade in active show">
+                <button type="button" onclick="getListOfUsersByService()" class="btn btn-secondary">Get list of users</button>
+            </div>
+            <div id="get-by-id-by-service" class="tab-pane">
+                <form id="get-by-id-by-service-form">
+                    <div class="form-group">
+                        <label for="Id">Id</label>
+                        <input name="Id" type="number" class="form-control" value="1">
+                    </div>
+                    <button type="button" onclick="getUserByIdByService()" class="btn btn-secondary">Get by id</button>
+                </form>
+            </div>
+            <div id="create-by-service" class="tab-pane">
+                <form id="create-user-by-service-form">
+                    <div class="form-group">
+                        <label for="FirstName">FirstName</label>
+                        <input name="FirstName" class="form-control" value="Test">
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName">LastName</label>
+                        <input name="LastName" class="form-control" value="Test">
+                    </div>
+                    <div class="form-group">
+                        <label for="Age">Age</label>
+                        <input name="Age" type="number" class="form-control" value="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input name="Email" type="email" class="form-control" value="Test@@test.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone</label>
+                        <input name="Phone" class="form-control" value="456123768">
+                    </div>
+                    <button type="button" onclick="createUserByService()" class="btn btn-secondary">Create</button>
+                </form>
+            </div>
+            <div id="update-by-service" class="tab-pane">
+                <select class="form-control"></select>
+                <form id="update-user-by-service-form">
+                    <div id="update-user-by-service-inputs"></div>
+                    <button type="button" onclick="updateUserByService()" class="btn btn-secondary">Update</button>
+                </form>
+            </div>
+            <div id="delete-by-service" class="tab-pane">
+                <form id="delete-by-service-form">
+                    <div class="form-group">
+                        <label for="Id">Id</label>
+                        <input name="Id" type="number" class="form-control">
+                    </div>
+                    <button type="button" onclick="deleteUserByService()" class="btn btn-secondary">Delete</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="col11" id="result-by-service">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>CQRS architecture</h2>
+        <hr />
+        <ul id="tab-cqrs" class="nav nav-tabs">
+            <li class="nav-item">
+                <a id="get-all-by-cqrs-tab" class="nav-link active" href="#get-all-by-cqrs" data-toggle="tab" aria-expanded="true">Gat all</a>
+            </li>
+            <li class="nav-item">
+                <a id="get-by-id-by-cqrs-tab" class="nav-link" href="#get-by-id-by-cqrs" data-toggle="tab" aria-expanded="false">Get by id</a>
+            </li>
+            <li class="nav-item">
+                <a id="create-by-cqrs-tab" class="nav-link" href="#create-by-cqrs" data-toggle="tab" aria-expanded="false">Create</a>
+            </li>
+            <li class="nav-item">
+                <a id="update-by-cqrs-tab" class="nav-link" href="#update-by-cqrs" data-toggle="tab" aria-expanded="false">Update</a>
+            </li>
+            <li class="nav-item">
+                <a id="delete-by-cqrs-tab" class="nav-link" href="#delete-by-cqrs" data-toggle="tab" aria-expanded="false">Delete</a>
+            </li>
+        </ul>
+        <div id="tab-cqrs-content" class="tab-content">
+            <div id="get-all-by-cqrs" class="tab-pane fade in active show">
+                <button type="button" onclick="getListOfUsersByCQRS()" class="btn btn-secondary">Get list of users</button>
+            </div>
+            <div id="get-by-id-by-cqrs" class="tab-pane">
+                <form id="get-by-id-by-cqrs-form">
+                    <div class="form-group">
+                        <label for="Id">Id</label>
+                        <input name="Id" type="number" class="form-control" value="1">
+                    </div>
+                    <button type="button" onclick="getUserByIdByCQRS()" class="btn btn-secondary">Get by id</button>
+                </form>
+            </div>
+            <div id="create-by-cqrs" class="tab-pane">
+                <form id="create-user-by-cqrs-form">
+                    <div class="form-group">
+                        <label for="FirstName">FirstName</label>
+                        <input name="FirstName" class="form-control" value="Test">
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName">LastName</label>
+                        <input name="LastName" class="form-control" value="Test">
+                    </div>
+                    <div class="form-group">
+                        <label for="Age">Age</label>
+                        <input name="Age" type="number" class="form-control" value="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input name="Email" type="email" class="form-control" value="Test@@test.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone</label>
+                        <input name="Phone" class="form-control" value="456123768">
+                    </div>
+                    <button type="button" onclick="createUserByCQRS()" class="btn btn-secondary">Create</button>
+                </form>
+            </div>
+            <div id="update-by-cqrs" class="tab-pane">
+                <select class="form-control"></select>
+                <form id="update-user-by-cqrs-form">
+                    <div id="update-user-by-cqrs-inputs"></div>
+                    <button type="button" onclick="updateUserByCQRS()" class="btn btn-secondary">Update</button>
+                </form>
+            </div>
+            <div id="delete-by-cqrs" class="tab-pane">
+                <form id="delete-by-cqrs-form">
+                    <div class="form-group">
+                        <label for="Id">Id</label>
+                        <input name="Id" type="number" class="form-control">
+                    </div>
+                    <button type="button" onclick="deleteUserByCQRS()" class="btn btn-secondary">Delete</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="col11" id="result-by-cqrs">
+
+        </div>
+    </div>
+</div>
+
+<script asp-location="Footer">
+    //service
+    function getListOfUsersByService() {
+        $.get("Comparation/UsersListByService", function (data) {
+            $("#result-by-service").html(data);
+        });
+    }
+
+    function getUserByIdByService() {
+        $.get("Comparation/UserByService?id=" + $("#get-by-id-by-service-form input").val(), function (data) {
+            $("#result-by-service").html(data);
+        });
+    }
+
+    function createUserByService() {
+        var obj = $("#create-user-by-service-form").serializeArray();
+        $.post("Comparation/CreateUserByService", obj, function (data) {
+            $("#result-by-service").html(data);
+        });
+    }
+
+    function updateUserByService() {
+        var obj = $("#update-user-by-service-form").serializeArray();
+        $.post("Comparation/UpdateUserByService", obj, function (data) {
+            $("#result-by-service").html(data);
+            loadUserSelectByService();
+            $("#update-user-by-service-form").closest('form').find("input").val(""); 
+        });                     
+    }
+
+    function deleteUserByService() {
+        $.get("Comparation/DeleteService?id=" + $("#delete-by-service-form input").val(), function (data) {
+            $("#result-by-service").html(data);
+        });
+    }
+
+    $("#update-by-service-tab").click(function () {
+        loadUserSelectByService();
+    });
+
+    $("#update-by-service select").change(function () {
+        $.get("Comparation/UserFormByService?id=" + $(this).find("option:selected").val(), function (data) {
+            $("#update-user-by-service-inputs").html(data);
+        });        
+    });
+
+    function loadUserSelectByService() {
+        $.get("Comparation/UsersSelectByService", function (data) {
+            $("#update-by-service select").html(data);
+        });
+    }
+
+    //cqrs
+    function getListOfUsersByCQRS() {
+        $.get("Comparation/UsersListByCQRS", function (data) {
+            $("#result-by-cqrs").html(data);
+        });
+    }
+
+    function getUserByIdByCQRS() {
+        $.get("Comparation/UserByCQRS?id=" + $("#get-by-id-by-cqrs-form input").val(), function (data) {
+            $("#result-by-cqrs").html(data);
+        });
+    }
+
+    function createUserByCQRS() {
+        var obj = $("#create-user-by-cqrs-form").serializeArray();
+        $.post("Comparation/CreateUserByCQRS", obj, function (data) {
+            $("#result-by-cqrs").html(data);
+        });
+    }
+
+    function updateUserByCQRS() {
+        var obj = $("#update-user-by-cqrs-form").serializeArray();
+        $.post("Comparation/UpdateUserByCQRS", obj, function (data) {
+            $("#result-by-cqrs").html(data);
+            loadUserSelectByCQRS();
+            $("#update-user-by-cqrs-form").closest('form').find("input").val("");
+        });
+    }
+
+    function deleteUserByCQRS() {
+        $.get("Comparation/DeleteUserByCQRS?id=" + $("#delete-by-cqrs-form input").val(), function (data) {
+            $("#result-by-cqrs").html(data);
+        });
+    }
+
+    $("#update-by-cqrs-tab").click(function () {
+        loadUserSelectByCQRS();
+    });
+
+    $("#update-by-cqrs select").change(function () {
+        $.get("Comparation/UserFormByCQRS?id=" + $(this).find("option:selected").val(), function (data) {
+            $("#update-user-by-cqrs-inputs").html(data);
+        });
+    });
+
+    function loadUserSelectByCQRS() {
+        $.get("Comparation/UsersSelectByCQRS", function (data) {
+            $("#update-by-cqrs select").html(data);
+        });
+    }
+</script>

@@ -1,0 +1,19 @@
+﻿@model DemoCQRSvsSevrice.Models.UserComparationModel
+
+<p>ElapsedMilliseconds - @Model.ElapsedMilliseconds</p>
+<ul>
+    @if (Model.Data is List<User>)
+    {
+        @foreach (var item in ((List<User>)Model.Data).OrderByDescending(x => x.Id).Take(10).ToList())
+        {
+            <li>@item.Id | @item.FirstName | @item.LastName | @item.Age | @item.Email | @item.Phone</li>
+        }
+    }
+
+    @if (Model.Data is User)
+    {
+        var item = (User)Model.Data;
+        <li>@item.Id | @item.FirstName | @item.LastName | @item.Age | @item.Email | @item.Phone</li>       
+    }
+
+</ul>
