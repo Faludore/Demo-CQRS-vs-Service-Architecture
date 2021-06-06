@@ -1,4 +1,4 @@
-# Demo-CQRS-vs-Service_Architecture
+# Demo-CQRS-vs-Service-Architecture
 This is my demo project to introduce my skills. Which demonstrate difference between CQRS and Service approach to implementation of CRUD operations.
 
 Done by:
